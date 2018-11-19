@@ -3,21 +3,31 @@ package com.spring.app.daoImpl;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.app.dao.UserDao;
 import com.spring.app.dto.UserDTO;
+import com.spring.app.modelBeean.School;
+import com.spring.app.modelBeean.Student;
+import com.spring.app.modelBeean.Subject;
+import com.spring.app.modelBeean.Teacher;
 import com.spring.app.modelBeean.User;
+
 
 
 @Repository
 public class UserDaoImpl implements UserDao{
+	
+	@Autowired
+	private SessionFactory sessionFactory;
 
 	@Transactional
 	public UserDTO validateUserDao(String userName,String password) throws Exception{
 		
-		/*Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		
 		//String qry = "select username_v,password_v  from user_details where username_v="+userName+" and password_v="+password;
 		String hql = "FROM User U where U.userName=:user_name and password =:password";
@@ -39,18 +49,18 @@ public class UserDaoImpl implements UserDao{
 			return userDTO;
 		}
 		
-		return null;*/
-		UserDTO userDTO = new UserDTO();
+		return null;
+		/*UserDTO userDTO = new UserDTO();
 		userDTO.setUserName("saroj");
 		userDTO.setPassword("kumar");
-		return userDTO;
+		return userDTO;*/
 	}
 
-	/*@Transactional
+	@Transactional
 	public boolean saveSchoolDetails(School school) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("Inside UserDaoImpl saveSchoolDetails()");
-		Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		System.out.println(session.toString());
 		Integer id = null;
 		
@@ -92,7 +102,7 @@ public class UserDaoImpl implements UserDao{
 	public boolean saveTeacherDetails(Teacher teacher) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveTeacherDetails()");
-		Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		Integer id = null;
 		try {
 			//teacher.setSchoolId(200);
@@ -117,7 +127,7 @@ public class UserDaoImpl implements UserDao{
 	public boolean saveStudentDetails(Student student) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveStudentDetails()");
-		Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		Integer id = null;
 		try {
 			//teacher.setSchoolId(200);
@@ -137,16 +147,16 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
 
-	public boolean saveClassDetails(com.sd.modelBean.Class class1) throws Exception {
+	public boolean saveClassDetails(com.spring.app.modelBeean.Class class1) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveClassDetails()");
-		Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		Integer id = null;
 		try {
 			//teacher.setSchoolId(200);
 			session.saveOrUpdate(class1);
 			session.flush();
-			class1 = (com.sd.modelBean.Class) session.get(com.sd.modelBean.Class.class, class1.getClassId());
+			class1 = (com.spring.app.modelBeean.Class) session.get(com.spring.app.modelBeean.Class.class, class1.getClassId());
 			id = class1.getClassId();
 		} catch (Exception e) {
 			// TODO: handle exception
@@ -163,7 +173,7 @@ public class UserDaoImpl implements UserDao{
 	public boolean saveSubjectDetails(Subject subject) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveSubjectDetails()");
-		Session session = SessionUtil.getSession();
+		Session session = sessionFactory.openSession();
 		Integer id = null;
 		try {
 			//teacher.setSchoolId(200);
@@ -181,6 +191,6 @@ public class UserDaoImpl implements UserDao{
 			flag = true;
 		}
 		return flag;
-	}*/
+	}
 
 }

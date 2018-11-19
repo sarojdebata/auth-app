@@ -6,6 +6,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.app.dao.UserDao;
 import com.spring.app.dto.UserDTO;
+import com.spring.app.modelBeean.School;
+import com.spring.app.modelBeean.Student;
+import com.spring.app.modelBeean.Subject;
+import com.spring.app.modelBeean.Teacher;
 import com.spring.app.service.UserService;
 
 @Service
@@ -19,7 +23,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return userDao.validateUserDao(userName, password);
 	}
-	/*@Transactional
+	@Transactional
 	public boolean saveSchoolDetails(School school) throws Exception {
 		// TODO Auto-generated method stub
 		return userDao.saveSchoolDetails(school);
@@ -35,7 +39,7 @@ public class UserServiceImpl implements UserService {
 		return userDao.saveStudentDetails(student);
 	}
 	@Transactional
-	public boolean saveClassDetails(com.sd.modelBean.Class class1) throws Exception {
+	public boolean saveClassDetails(com.spring.app.modelBeean.Class class1) throws Exception {
 		// TODO Auto-generated method stub
 		return userDao.saveClassDetails(class1);
 	}
@@ -43,6 +47,6 @@ public class UserServiceImpl implements UserService {
 	public boolean saveSubjectDetails(Subject subject) throws Exception {
 		// TODO Auto-generated method stub
 		return userDao.saveSubjectDetails(subject);
-	}*/
+	}
 
 }
