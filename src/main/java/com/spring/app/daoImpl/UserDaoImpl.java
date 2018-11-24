@@ -99,6 +99,7 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
 
+	@Transactional
 	public boolean saveTeacherDetails(Teacher teacher) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveTeacherDetails()");
@@ -147,6 +148,7 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
 
+	@Transactional
 	public boolean saveClassDetails(com.spring.app.modelBeean.Class class1) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveClassDetails()");
@@ -170,6 +172,7 @@ public class UserDaoImpl implements UserDao{
 		return flag;
 	}
 
+	@Transactional
 	public boolean saveSubjectDetails(Subject subject) throws Exception {
 		// TODO Auto-generated method stub
 		System.out.println("inside saveSubjectDetails()");

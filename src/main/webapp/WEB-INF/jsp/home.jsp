@@ -111,21 +111,21 @@ $(document).ready(function()
                             Onboard
                         </a>
                         <ul class="collapse list-unstyled" id="onboardSubmenu">
-                            <li><a href="/MyPortal/onboardSchool">School</a></li>
-                            <li><a href="/MyPortal/onboardTeacher">Teacher</a></li>
-                            <li><a href="/MyPortal/onboardStudent">Student</a></li>
-                            <li><a href="/MyPortal/onboardClass">Class</a></li>
-                            <li><a href="/MyPortal/onboardSubject">Subject</a></li>
+                            <li><a href="/auth-app/onboardSchool">School</a></li>
+                            <li><a href="/auth-app/onboardTeacher">Teacher</a></li>
+                            <li><a href="/auth-app/onboardStudent">Student</a></li>
+                            <li><a href="/auth-app/onboardClass">Class</a></li>
+                            <li><a href="/auth-app/onboardSubject">Subject</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="/MyPortal/faQ">
+                        <a href="/auth-app/faQ">
                             <i class="icon-cloud"></i>
                             FAQ
                         </a>
                     </li>
                     <li>
-                        <a href="/MyPortal/contact">
+                        <a href="/auth-app/contact">
                             <i class="icon-pencil"></i>
                             Contact
                         </a>

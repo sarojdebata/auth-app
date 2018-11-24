@@ -2,9 +2,10 @@ package com.spring.app.authapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
-@SpringBootApplication(scanBasePackages={"com.spring.app"},exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication(scanBasePackages={"com.spring.app"},exclude = { SecurityAutoConfiguration.class , HibernateJpaAutoConfiguration.class})
 public class AuthAppApplication {
 
 	public static void main(String[] args) {
